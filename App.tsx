@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+import * as SplashScreen from 'expo-splash-screen';
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { Players } from '@screens/Players';
+
+import theme from './src/theme';
+import { StatusBar } from 'react-native';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const [isLoaded ] = useFonts({
+    Roboto_400Regular, 
+    Roboto_700Bold
+  })
+
+  if(isLoaded) {
+    SplashScreen.hideAsync()
+    return (
+      <ThemeProvider theme={theme}>
+        <StatusBar 
+          barStyle='light-content' 
+          backgroundColor='transparent'
+          translucent
+          />
+        <Players />
+      </ThemeProvider>
+    );
+  }
+
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
