@@ -1,9 +1,13 @@
 import { Highlight } from '@components/Highlight';
 import { Header } from '@components/Header';
 import { Button } from '@components/Button';
-
-import { Container, Content, Icon } from './styles';
 import { Input } from '@components/Input';
+
+import { 
+  Container, 
+  Content, 
+  Icon 
+} from './styles';
 
 export function NewGroup() {
   return (

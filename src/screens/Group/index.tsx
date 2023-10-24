@@ -28,11 +28,12 @@ export function Group() {
               title={item}
              />
           )}
-          contentContainerStyle={groups.length === 0 && { flex: 1}}
-          ListEmptyComponent={() => (
-            <ListEmpty 
-              message="Que tal cadastrar a primeira turma?"
-            /> 
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={groups.length === 0 && { flex: 1}}
+            ListEmptyComponent={() => (
+              <ListEmpty 
+                message="Que tal cadastrar a primeira turma?"
+              /> 
             )}
         />
 

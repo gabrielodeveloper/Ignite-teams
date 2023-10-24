@@ -1,10 +1,15 @@
+import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import * as SplashScreen from 'expo-splash-screen';
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { Players } from '@screens/Players';
 
+import { 
+  useFonts, 
+  Roboto_400Regular, 
+  Roboto_700Bold 
+} from '@expo-google-fonts/roboto';
+
 import theme from './src/theme';
-import { StatusBar } from 'react-native';
 
 SplashScreen.preventAutoHideAsync();
 
